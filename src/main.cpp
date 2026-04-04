@@ -40,7 +40,8 @@ BluetoothSerial SerialBT;
 // Variables for LoRa
 String receivedText = "";
 String messageToSend = "";
-const String deviceName = "ESP32_OLED-1";
+String incomingLoRaMessage = "";
+const String deviceName = "ESP32_OLED-2";
 bool messageReadyToSend = false;
 
 void setup() {
@@ -126,7 +127,7 @@ void sendMessageViaLoRa(String message) {
   Serial.println("Sent via LoRa: " + message);
   
   // Show sent message on OLED
-  displayStatus("Sent via LoRa:", message, "Waiting for BT...");
+  displayStatus("Sent via LoRa:", message, "Waiting for BT message...");
   SerialBT.println("LoRa TX OK: " + message);
 }
 
@@ -150,6 +151,22 @@ void loop() {
   if(messageReadyToSend && digitalRead(BUTTON_PIN) == LOW) {
     sendMessageViaLoRa(messageToSend);
     messageReadyToSend = false;
+  }
+
+  // Check for incoming LoRa messages
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) {
+    
+    while (LoRa.available()) {
+      incomingLoRaMessage += (char)LoRa.read();
+    }
+    Serial.println("Received via LoRa: " + incomingLoRaMessage);
+    
+    // Show received LoRa message on OLED
+    displayStatus("Received via LoRa:", incomingLoRaMessage, "Waiting for BT message...");
+    
+    // Send acknowledgment back via Bluetooth
+    SerialBT.println("LoRa RX OK: " + incomingLoRaMessage);
   }
 }
 
