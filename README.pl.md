@@ -1,7 +1,8 @@
 # Bun-1 Communicator
+[![en](https://img.shields.io/badge/lang-en-blue](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
+[![pl](https://img.shields.io/badge/lang-PL-red)](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
 
-> Ten projekt posiada również dokumentację w języku angielski: [README.md](README.md)
->
+
 Komunikator ESP32 LoRa z wyświetlaczem OLED i sterowaniem przez Bluetooth.
 
 Projekt jest zaprojektowany dla płytki ESP32 TTGO LoRa32 i wykorzystuje:
