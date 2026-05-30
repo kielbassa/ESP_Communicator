@@ -1,6 +1,6 @@
 # Bun-1 Communicator
 
-[![en](https://img.shields.io/badge/lang-en-blue](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
+[![en](https://img.shields.io/badge/lang-en-blue)](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
 [![pl](https://img.shields.io/badge/lang-PL-red)](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
 
 ESP32-based LoRa communicator with OLED status display and Bluetooth control.
