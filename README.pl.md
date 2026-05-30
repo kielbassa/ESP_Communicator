@@ -3,7 +3,7 @@
 [![pl](https://img.shields.io/badge/lang-PL-red)](https://github.com/kielbassa/Bun-1_Communicator/blob/master/README.pl.md)
 
 
-Komunikator ESP32 LoRa z wyświetlaczem OLED i sterowaniem przez Bluetooth.
+Komunikator ESP32 LoRa z wyświetlaczem OLED sterowany przez Bluetooth.
 
 Projekt jest zaprojektowany dla płytki ESP32 TTGO LoRa32 i wykorzystuje:
 - radio LoRa do bezprzewodowej komunikacji
